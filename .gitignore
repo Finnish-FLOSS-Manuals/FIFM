@@ -10,6 +10,7 @@ wp-config.php
 
 # ignore directories except "wp-content" directory, since our own code and files are there
 !wp-content/*
+wp-content/cache/*
 wp-includes/*
 wp-admin/*
 
