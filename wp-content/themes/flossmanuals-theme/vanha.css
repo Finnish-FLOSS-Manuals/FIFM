@@ -1,0 +1,568 @@
+/*------------------------------------------------------------------ 
+Project:      Fm-fr
+Version:      1.1
+Last change:  30-11-2011
+Author:       Nicolas Dufour (jazzynico)
+Website:      http://fr.flossmanuals.net/
+--------------------------------------------------------------------
+[Table of contents] 
+1. Body
+2. Header
+3. Navigation
+  3.1. Top navigation
+  3.2. About navigation
+  3.3. Sites list
+4. Page content
+  4.1. Headings
+  4.2. Links
+  4.3. Forms
+  4.4. Front page
+    4.4.2 FM info
+    4.4.2 Books list
+  4.5. Remix
+X. Others
+-------------------------------------------------------------------*/  
+/*------------------------------------------------------------------ 
+[1. Body] 
+*/
+body {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: #484848;
+  background-color: #eee;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  }
+
+
+
+/*------------------------------------------------------------------ 
+[2. Header ]
+*/
+
+.topbar {
+  padding: 0;
+  margin: 0;
+  height: 85px;
+  background-color: #fff;
+}
+
+/* Contournement pour la page d'informations (également dans les autres <a> de navigation) */
+.topbar a {
+  border-bottom: 0 !important;
+}
+
+.logo {
+  margin: 10px 0 0 10px;
+  z-index: 10;
+}
+
+/*------------------------------------------------------------------ 
+[3. Navigation ]
+*/
+/*-- [3.1. Top navigation] --*/
+
+.topnav {
+  font-family: "DejaVu Sans", arial, sans-serif;
+  font-variant:small-caps;
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+  position: absolute;
+  top: 1px;
+  left: 370px;
+  }
+
+.topnav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.topnav li { 
+  border-left: 1px solid #999999;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 28px;
+  }
+
+.topnav li.last {
+  border-right: 1px solid #999999;
+}
+
+.topnav a {
+  display: block;
+  padding: 0.5em 1em;
+  vertical-align: top;
+  border-bottom: 0 !important;
+  }
+.topnav .active {
+  background: url("/web/20120505105121im_/http://fi.flossmanuals.net/_templates/fm_resources/topnav-selected.png") repeat-x !important;
+  text-decoration: none !important;
+  color: #666 !important;
+  font-weight: bold;
+}
+.topnav a:hover {
+  color: black;
+  background: url("/web/20120505105121im_/http://fi.flossmanuals.net/_templates/fm_resources/topnav-hover.png") repeat-x ;
+  }
+  
+/*-- [3.2. About navigation] --*/
+
+.navdiv {
+  position: absolute;
+  top: 65px;
+  background-color: #fff;
+  z-index: 20;
+}
+
+.bookinav {
+  margin-left: 20px;
+}
+
+.navbox {
+  float: left;
+  font-family: "DejaVu Sans", arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  }
+  
+.navbox ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border-right: 1px solid #333333;
+  height: 1.5em;
+}
+
+.navbox li { 
+  float: left;
+  margin: 0;
+  padding: 0;
+  }
+  
+.navbox a {
+  display: block;
+  color: #000;
+  padding: .2em 1em;
+  border-bottom: 0 !important;
+  }
+
+.navbox a:hover {
+  text-decoration: underline;
+  color: black;
+  }
+
+/*-- [3.2. Sites list] --*/
+#siteslist {
+  font-family: "DejaVu Sans", arial, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: white;
+  top:1px;
+  left: 780px;
+  width: 120px;
+  z-index: 20;
+}
+
+#siteslist p {
+  display: block;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  background: #444 url("/web/20120505105121im_/http://fi.flossmanuals.net/_templates/fm_resources/down-arrow.png") 95px 6px no-repeat;
+  margin: 0;
+  padding: 4px 20px 5px 20px;
+  cursor: default;
+}
+
+#siteslist:hover p {
+  padding-bottom: 10px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.topdrop {
+  background-color: #333333;
+  padding: 10px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  display: none;
+  list-style-type: none;
+  margin-top:0;
+}
+
+#siteslist:hover .topdrop {
+  display: block;
+}
+
+#siteslist .topdrop {
+  width: 120px;
+  padding: 0;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.topdrop a {
+  display: block;
+  padding: 7px 40px 7px 20px;
+  color: white !important;
+  font-size: 11px;
+  line-height: 11px;
+  border-bottom: 0 !important;
+}
+
+.topdrop a:hover {
+  background-color: #4d4d4d;
+  text-decoration: none;
+}
+
+.topdrop li:last-child a:hover {
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#siteslist .separator {
+  border-top: 1px solid #666666;
+}
+
+/*------------------------------------------------------------------ 
+[4. Content ]
+*/
+
+.content-container {
+  margin: 20px 0 100px 50px;
+  width: 800px;
+  padding: 10px;
+}
+
+.content-container img {
+  border-style: none;
+  max-width: 540px;        
+}
+
+.introtext {
+  margin: 0 0 10px 20px;
+  padding: 2px 0 2px 5px;
+  margin-top: 0px;
+  border-left: 5px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  line-height: 1.4em;
+}
+
+/*-- [4.1. Headings] --*/
+
+h1 {
+    background: #ff7f00;
+    color: #ffffff;
+    font-family: "DejaVu sans light", arial, sans-serif !important;
+    font-size: 1.8em;
+    line-height: 1.4em;
+    font-weight: normal;
+    margin: -10px -11px 10px -10px;
+    padding: 3px 20px;
+}
+
+h1 a {
+  color: #ff7f00 !important;
+}
+
+h2 {
+  font-family: "DejaVu sans", arial, sans-serif !important;
+  font-size: 1.4em;
+  color: #ff7f00;
+  border-bottom: 1px dotted gray;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+h4 {
+  font-size: 1em;
+  font-family : "DejaVu sans", arial, sans-serif;
+  font-weight : bold;
+  margin-bottom: -12px; 
+}
+
+h5 {
+  font-size: 1.0em;
+  font-family : "Arial Black";
+  margin-bottom: 0em; 
+}
+
+h6 {
+  font-size: 0.8em;
+  font-family : "Arial Black";
+  margin-bottom: 0em; 
+}
+
+/*-- [4.2. Links] --*/
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #555555;
+}
+
+a:visited {
+  color: #555555;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff7f00;
+}
+
+/*-- [4.3. Forms] --*/
+
+label {
+  cursor: pointer;
+  line-height: 12px;
+  margin-top: 2px;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+select, input, textarea {
+  background-color: #f5f5f5;
+  border:1px solid black;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+select:focus, input:focus, textarea:focus {
+  border: 1px solid #cc6600;
+  background-color: #ffffdd;
+}
+
+/*-- [4.4 Front page] --*/
+/*-- [4.4.1 FM info] --*/
+
+.fm-info {
+  width: 200px; 
+  padding: 5px;
+  float: left;
+  line-height: 1.4em;
+}
+
+.fm-info h2 {
+  font-family: "DejaVu sans", arial, sans-serif !important;
+  font-weight: normal;
+  font-style: oblique;
+  font-size: 1.4em;
+  color: #666666;
+  border-bottom: 1px solid #cccccc;
+}
+
+.fm-info a:link {
+  color: #ff7f00;
+}
+
+.fm-info a:visited {
+  color: #ff7f00;
+}
+
+.fm-info a:hover {
+  text-decoration: underline;
+  color: #ff7f00;
+}
+
+/*-- [4.4.2 Books list] --*/
+
+.books-list {
+  width: 540px;
+  margin-top: 20px;
+  padding-left: 220px; 
+}
+
+.books-list table {
+  border-left: 1px solid #999999;
+  empty-cells:hide;
+
+}
+
+.books-list td {
+  border: 1px solid #C6C6C6;
+  border-bottom: 2px solid #C6C6C6;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background: #fff;
+  padding: 5px;
+  text-align: center;
+  width: 33%;
+  empty-cells:hide;
+}
+
+.books-list h1{
+  margin: 0px;
+  background: #aaaaaa;
+  padding: 2px 20px;
+  font-size: 1.5em;
+  border-left: 1px solid #999999;
+}
+
+.books-list h2 {
+  font-size: 1.3em;
+  font-weight: normal;
+  margin: 5px 0 10px 0;
+  border-bottom: 1px dotted #666666;
+  color: #666666;
+}
+
+.books-list table {
+  width: 100%;
+  border-spacing: 10px; 
+}
+
+p.name {
+  font-size: 1.1em;
+  padding-bottom: 0;
+  margin: 5px 0 0 0;
+  empty-cells:hide;
+}
+
+p.name small {
+  position: relative;
+  bottom: 3px;
+  color: #ff7f00;
+  font-size: 0.7em;
+}
+
+p.translations {
+  font-size: 0.7em;
+  margin: 0 0 5px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/*-- [4.5. Remix] --*/
+
+.heder { color: red; background-color: #ff7f00}
+
+.topic { color: black; }
+
+.title { color: black; background-color: #f0f0f0}
+
+#remixnav #step1 a{
+  background-color: #fff;
+}
+
+.remixmenu {
+  font-family: arial, sans-serif;
+  border: 1px solid #ff7f00;
+  float: left;
+  margin-right: 10px;
+}
+
+.remixmenu a {
+  display: block;
+  color: #000;
+  font-weight: bold;
+  padding: .3em 1.2em;
+  background-color: #eee;
+}
+
+.remixmenu a:hover {
+  color: #fff;
+  background-color: #ff7f00 !important;
+}
+
+#remixcontent {
+  padding: 20px 10px 0 10px;
+}
+
+#remixcontent ol {
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+
+#thelist1 a, #thelist2 a {
+  text-decoration: None;
+}
+
+#thelist1, #thelist2{
+  font-family: arial, sans-serif;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  list-style-type: none;
+  padding: 4px;
+  margin: 0;
+}
+
+#thelist1 li, #thelist2 li {
+  border: 1px solid black;
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*------------------------------------------------------------------ 
+[X. Others ]
+*/
+
+.shadow {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  -moz-box-shadow: 4px 4px 5px #848284; /* FF3.5+ */
+  -webkit-box-shadow: 4px 4px 5px #848284; /* Saf3.0+, Chrome */
+  box-shadow: 4px 4px 5px #848284; /* Opera 10.5, IE 9.0 */
+  /*
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#848284')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#848284'); */
+}
+
+pre, span.Code, span.verbatim {
+font-size:0.9em;
+line-height:1.5em;
+background-color:#FFE5CC;
+border: 0px solid #000000;
+margin-left : 0.5em;
+margin-bottom : 20px;
+margin-right : 1em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+color : black;
+}
+
+
+
+/*
+     FILE ARCHIVED ON 10:51:21 May 05, 2012 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:43:50 Feb 03, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 451.477
+  LoadShardBlock: 423.249 (3)
+  load_resource: 239.859
+  CDXLines.iter: 23.092 (3)
+  RedisCDXSource: 0.691
+  esindex: 0.011
+  PetaboxLoader3.resolve: 473.764 (3)
+  exclusion.robots: 0.287
+  PetaboxLoader3.datanode: 157.994 (4)
+  exclusion.robots.policy: 0.277
+*/
