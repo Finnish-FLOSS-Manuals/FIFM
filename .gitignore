@@ -10,6 +10,8 @@ wp-config.php
 
 # ignore everything in the "wp-content" directory, except our own plugin and theme
 wp-content/*
+wp-includes/*
+wp-admin/*
 !wp-content/plugins/fifm-plugin/
 !wp-content/themes/fifm-theme/
 !wp-content/uploads/
